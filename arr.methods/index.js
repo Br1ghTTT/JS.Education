@@ -33,12 +33,12 @@ function myMap(arr2, callback){
 }
 myMap([1, 3, 7, 9], function(result){
     let res = [];
+    console.log("Result of parental array is: " + result);
     for(let i = 0; i < result.length; i++){
         result[i] *= 5;
     }
     res.push(result);
-    console.log("Result of callback function myMap is: " + res);
-
+    console.log("Result of callback function myMap is: " + result);
 });
 
 
