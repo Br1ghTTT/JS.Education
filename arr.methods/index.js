@@ -1,96 +1,108 @@
 // ************************************* filter() ***************************************
 console.log("**************** filter() *****************");
-function myFilter(arr, callback){
-    for(let i = 0; i < arr.length; i++){
-          callback(arr[i]);
-    }
-}   
-myFilter([5, 7, 8, 9], function (res) {
-    if(res > 7){
-        console.log("Result of callback function myFilter is: " + res);
-    }
-});
+arr = [5, 7, 8, 9];
+const callback = (value) => value > 7;
+
+const result = myFilter(arr, callback);
+function myFilter(arr, myCallBack){
+    const newArr = [];
+    for(let i = 0; i < arr.length; i++){  
+        if(myCallBack(arr[i])){ 
+           newArr.push(arr[i]);
+        }
+    } 
+    console.log("Result of callback function myFilter is: " + newArr);
+    return newArr;
+}
 
 
 // ************************************* reduce() ***************************************
 console.log("**************** reduce() *****************");
- function myReduce(arr1, callback){
-        callback(arr1);
-}
-myReduce([10, 20, 30, 40], function(res) {
-    let sum = 0;
-    for(let i = 0; i < res.length; i++){
-        sum += res[i];
+arr1 = [1, 2, 3, 4];
+const sumReducer = (acc, next) => { return acc + next;}
+function myReduce(arr1, reducer, initialValue){
+    let i;
+    if(initialValue){
+        i = 0;
+    }else{
+        i = 1;
+        initialValue = arr1[0];
     }
-    console.log("Result of callback function myReduce is: " + sum);
-});
+    let acc = initialValue;
 
+    for(; i < arr1.length; i++){
+        acc = reducer(acc, arr1[i]);
+    }
+    return acc;
+}
+const resReduce = myReduce(arr1, sumReducer, 5);
+console.log("Result of callback function myReduce is: " + resReduce);
+ 
 
 // ************************************* map() ***************************************
 console.log("***************** map() ******************");
-function myMap(arr2, callback){
-    callback(arr2);
-}
-myMap([1, 3, 7, 9], function(result){
-    let res = [];
-    console.log("Result of parental array is: " + result);
-    for(let i = 0; i < result.length; i++){
-        result[i] *= 5;
+arr2 = [5, 7, 8, 9];
+callback2 = (arr2) => {return arr2 * 2; }
+const result2 = myMap(arr2, callback2);
+function myMap(arr2, myCallBack2){
+    const resArray = [];
+    for(let i = 0; i < arr2.length; i++){
+        resArray.push(myCallBack2(arr2[i]));
     }
-    res.push(result);
-    console.log("Result of callback function myMap is: " + result);
-});
-
+    console.log("Result of parental array is: " + arr2);
+    console.log("Result of callback function myMap is: " + resArray);
+    return resArray;
+}
 
 // ************************************* forEach() ***************************************
-console.log("*************** forEach() ****************");
+ console.log("*************** forEach() ****************");
+const arr3 = [5, 7, 8, 9];
+const callForEach = (arr3) => {console.log( '_' + arr3 + '_' )};
 function myForEach(arr3, callback){
-    callback(arr3);
-}
-myForEach([5, 7, 8, 9], function(res) {
-    let txt= '';
-    for(let i = 0; i < res.length; i++){
-        txt += res[i] + '*';
+    for(let i = 0; i < arr3.length; i++){
+    callback(arr3[i]);
     }
-    console.log("Result of callback function myForEach is: " + txt);
-});
+}
+myForEach(arr3, callForEach);
+
 
 
 // ************************************* every() ***************************************
 console.log("**************** every() *****************");
+const arr4 = [5, 7, 8, 11];
+const callEvery = (element) =>  element > 10;
 function myEvery(arr4, callback){
-    callback(arr4)
-}
-myEvery([5, 7, 8, 11], function(res){
-    let result;
-    for(let i = 0; i < res.length; i++){
-        if(res[i] < 10){
-            result = true;
+    let res;
+    for(let i = 0; i < arr4.length; i++){
+        if(callback(arr4[i])){
+            res =  callback(arr4[i]);
         }else{
-            result = false;
+            res =  callback(arr4[i]);
             break;
         }
     }
-  
-    console.log("Result of callback function myEvery is: " + result);
-});
+    return res;
+}
+const resOfMyEvery = myEvery(arr4,callEvery);
+console.log("Result of callback function myEvery is: " + resOfMyEvery);
 
 
 // ************************************* some() ***************************************
-console.log("***************** some() ******************");
+console.log("**************** some() *****************");
+const arr5 = [5, 7, 8, 11];
+const callSome = (element) =>  element > 10;
 function mySome(arr5, callback){
-    callback(arr5);
-}
-mySome([5, 7, 8, 9], function(res){
-    let result;
-    for(let i = 0; i< res.length; i++){
-        if(res[i] < 7){
-            result = true;
+    let res;
+    for(let i = 0; i < arr5.length; i++){
+        if(callback(arr5[i])){
+            res =  callback(arr5[i]);
             break;
         }else{
-            result = false;
+            res =  callback(arr5[i]);
         }
     }
-    console.log("Result of callback function mySome is: " + result);
-});
- 
+    return res;
+}
+const resOfMySome = mySome(arr5,callSome);
+console.log("Result of callback function mySome is: " + resOfMySome);
+   
