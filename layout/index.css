@@ -27,6 +27,7 @@ position: absolute;
     outline: none;
     border-bottom: 2px solid rgb(136, 133, 133);
     text-align:right;
+    position: relative;
 }
 .second-input{
     height: 25px;
@@ -35,7 +36,21 @@ position: absolute;
     border-bottom: 2px solid rgb(136, 133, 133);
     text-align:right;
 }
-
+.first-input_{
+    height: 25px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(136, 133, 133);
+    text-align:right;
+}
+.second-input_{
+    height: 25px;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid rgb(136, 133, 133);
+    text-align:right;
+    
+}
 .days{
     display: inline-block;
 }
@@ -137,5 +152,64 @@ position: absolute;
     color: white;
     width: 23%;
     height: 35px;
+}
 
+.main-form .first-input + label:after{
+    content: attr(data-fon);
+    position: absolute;
+    left: 46%;
+    top: 23%;
+    color: rgb(196, 190, 190);
+}
+.main-form .first-input:focus + label:after, .main-form input:hover + label:after {
+    color: rgb(18, 6, 128);
+  }
+
+.main-form .second-input + label:after{
+    content: attr(data-fon);
+    position: absolute;
+    left: 61.7%;
+    top: 23%;
+    color: rgb(196, 190, 190);
+}
+.main-form .second-input:focus + label:after, .main-form input:hover + label:after {
+    color: rgb(18, 6, 128);
+  }
+
+
+
+.main-form .first-input_ + label:after{
+    content: attr(data-fon);
+    position: absolute;
+    left: 46%;
+    top: 49%;
+    color: rgb(196, 190, 190);
+}
+.main-form .first-input_:focus + label:after, .main-form input:hover + label:after {
+    color: rgb(18, 6, 128);
+}
+.main-form .second-input_ + label:after{
+    content: attr(data-fon);
+    position: absolute;
+    left: 61.7%;
+    top: 49%;
+    color: rgb(196, 190, 190);
+}
+.main-form .second-input_:focus + label:after, .main-form input:hover + label:after{
+    color: rgb(18, 6, 128);
+}
+#but1 {
+   background-color: white;
+   border: none;
+}
+
+#but2 {
+    background-color: white;
+    border: none;
+    margin-left: 7%;
+ }
+
+ #name{
+    color: rgb(18, 6, 128);
+    font-weight: bold;
 }
