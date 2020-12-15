@@ -1,6 +1,5 @@
 function checkFirstInput(){
 let input1 = document.getElementsByClassName("first-input")[0];
-let hoursArr = [];
 let valOfFirsInput = input1.value;
 let mainRegExp = /^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/;
 let regExp = /^([0-9]|0[0-9]|1[0-9]|2[0-3])$/;
@@ -16,14 +15,11 @@ let fourthRegExp = /^[0-9]:[0-9][0-5]$/;
         }
         return input1.value;
     }else if(regExp.test(input1.value)){
-        for(let i = 0; i < 24; i++){
-            hoursArr.push(i);
-            if(valOfFirsInput >= 10 && valOfFirsInput == hoursArr[i]){
+            if(valOfFirsInput >= 10){
                 valOfFirsInput += ':00';
-            }else if(valOfFirsInput < 10 && valOfFirsInput == hoursArr[i]){
+            }else if(valOfFirsInput < 10){
                 valOfFirsInput = '0' + valOfFirsInput + ':00';
             }
-        }
         input1.value = valOfFirsInput;
         return input1.value; 
     }else if(secRegExp.test(input1.value)){
