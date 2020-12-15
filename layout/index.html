@@ -12,9 +12,9 @@
     <div class="main-div">
        <span id="name">Any text</span>
         <button id="but1"><img src="src/add.png" width="20px" height="20px"></button>
-        <input type="text" class="first-input" placeholder="some text" ><label data-fon="&#9719">&nbsp;</label>
+        <input type="text" class="first-input" placeholder="some text" onchange="checkFirstInput()" value=""><label data-fon="&#9719">&nbsp;</label>
         -
-        &nbsp;<input type="text" class="second-input" placeholder="some text"><label data-fon="&#9719">&nbsp;</label>
+        &nbsp;<input type="text" class="second-input" placeholder="some text" onchange="checkSecondInput()" value=""><label data-fon="&#9719">&nbsp;</label>
         <div class="first-day">
             <label class="days">
                 <span class="monday">M</span>
@@ -25,47 +25,47 @@
         <div class="other-days">
             <label class="days">
                 <span class="tuesday">T</span>
-                <input type="checkbox" class="checkbox"/>
-                <span class="fake"></span>
+                <input value='v1' type="checkbox" class="checkbox"/>
+                <span value='v1' class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="wednesday">W</span>
-                <input type="checkbox" class="checkbox"/>
-                <span class="fake"></span>
+                <input value='v2' type="checkbox" class="checkbox"/>
+                <span value='v2' class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="thursday">T</span>
-                <input type="checkbox" class="checkbox"/>
-                <span class="fake"></span>
+                <input value='v3' type="checkbox" class="checkbox"/>
+                <span value='v3' class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="friday">F</span>
-                <input type="checkbox" class="checkbox"/>
-                <span class="fake"></span>
+                <input value='v4' type="checkbox" class="checkbox"/>
+                <span value='v4' class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="saturday">S</span>
-                <input type="checkbox" class="checkbox"/>
-                <span class="fake"></span>
+                <input value='v5' type="checkbox" class="checkbox"/>
+                <span value='v5' class="fake"></span>
             </label>
         </div>
         <label class="days">
             <span class="sunday">S</span>
-            <input type="checkbox" class="checkbox"/>
-            <span class="fake"></span>
+            <input value='v6' type="checkbox" class="checkbox"/>
+            <span value='v6' class="fake"></span>
         </label>
     </div> 
 
     
-    <div class="main-div">
+   <!--  <div class="main-div">
         <button id="but2"><img src="src/del.jpg" width="25px" height="25px"></button>
         <input type="text" class="first-input_" placeholder="some text" ><label data-fon="&#9719">&nbsp;</label>
         -
@@ -117,9 +117,11 @@
             <input type="checkbox" class="checkbox"/>
             <span class="fake"></span>
         </label>
-    </div> 
+    </div>  -->
     <button class="but">Submit</button>   
 </form>
 
+
+<script src="index.js"></script>
 </body>
 </html>
