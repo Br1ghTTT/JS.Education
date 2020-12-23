@@ -3,124 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel = "stylesheet" href = "index.css">
     <title>Layout</title>
 </head>
 <body>
 
-<form class="main-form"> <h2 class="main-text"><span class="txt">Any text</span></h2>
-    <div class="main-div">
-       <span id="name">Any text</span>
-        <button id="but1"><img src="src/add.png" width="20px" height="20px"></button>
-        <input type="text" class="first-input" placeholder="some text" onchange="checkFirstInput()" value=""><label data-fon="&#9719">&nbsp;</label>
-        -
-        &nbsp;<input type="text" class="second-input" placeholder="some text" onchange="checkSecondInput()" value=""><label data-fon="&#9719">&nbsp;</label>
-        <div class="first-day">
-            <label class="days">
-                <span class="monday">M</span>
-                <input type="checkbox" class="checkbox"/>
-                <span class="fake"></span>
-            </label>
-        </div>
-        <div class="other-days">
-            <label class="days">
-                <span class="tuesday">T</span>
-                <input value='v1' type="checkbox" class="checkbox"/>
-                <span value='v1' class="fake"></span>
-            </label>
-        </div>
-        <div class="other-days">
-            <label class="days">
-                <span class="wednesday">W</span>
-                <input value='v2' type="checkbox" class="checkbox"/>
-                <span value='v2' class="fake"></span>
-            </label>
-        </div>
-        <div class="other-days">
-            <label class="days">
-                <span class="thursday">T</span>
-                <input value='v3' type="checkbox" class="checkbox"/>
-                <span value='v3' class="fake"></span>
-            </label>
-        </div>
-        <div class="other-days">
-            <label class="days">
-                <span class="friday">F</span>
-                <input value='v4' type="checkbox" class="checkbox"/>
-                <span value='v4' class="fake"></span>
-            </label>
-        </div>
-        <div class="other-days">
-            <label class="days">
-                <span class="saturday">S</span>
-                <input value='v5' type="checkbox" class="checkbox"/>
-                <span value='v5' class="fake"></span>
-            </label>
-        </div>
-        <label class="days">
-            <span class="sunday">S</span>
-            <input value='v6' type="checkbox" class="checkbox"/>
-            <span value='v6' class="fake"></span>
-        </label>
-    </div> 
+<form class="main-form"> <h2 class="main-text"><span class="txt">Schedule</span></h2>
+    <div class="main-div" id="row_0">
+        <span id="name">Add item</span>
+        <button id="but1" onclick="return false"><img src="src/add.png" width="20px" height="20px"></button>
+        <input type="text" class="first-input" placeholder="Input the time" onchange="checkInputs(this)" value="">
+            -
+        &nbsp;<input type="text" class="second-input" placeholder="Input the time" onchange="checkInputs(this)" value="">
 
-    
-   <!--  <div class="main-div">
-        <button id="but2"><img src="src/del.jpg" width="25px" height="25px"></button>
-        <input type="text" class="first-input_" placeholder="some text" ><label data-fon="&#9719">&nbsp;</label>
-        -
-        &nbsp;<input type="text" class="second-input_" placeholder="some text"><label data-fon="&#9719">&nbsp;</label>
-        <div class="first-day">
+        <div class="other-days">
             <label class="days">
                 <span class="monday">M</span>
-                <input type="checkbox" class="checkbox"/>
+                <input type="checkbox" class="checkbox" name="values" value="0" onchange="refreshDisabledStates(this)"/>
                 <span class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="tuesday">T</span>
-                <input type="checkbox" class="checkbox"/>
+                <input type="checkbox" class="checkbox" name="values" value="1" onchange="refreshDisabledStates(this)"/>
                 <span class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="wednesday">W</span>
-                <input type="checkbox" class="checkbox"/>
+                <input type="checkbox" class="checkbox" name="values" value="2" onchange="refreshDisabledStates(this)"/>
                 <span class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="thursday">T</span>
-                <input type="checkbox" class="checkbox"/>
+                <input type="checkbox" class="checkbox" name="values" value="3" onchange="refreshDisabledStates(this)"/>
                 <span class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="friday">F</span>
-                <input type="checkbox" class="checkbox"/>
+                <input type="checkbox" class="checkbox" name="values" value="4" onchange="refreshDisabledStates(this)"/>
                 <span class="fake"></span>
             </label>
         </div>
         <div class="other-days">
             <label class="days">
                 <span class="saturday">S</span>
-                <input type="checkbox" class="checkbox"/>
+                <input type="checkbox" class="checkbox" name="values" value="5" onchange="refreshDisabledStates(this)"/>
                 <span class="fake"></span>
             </label>
         </div>
         <label class="days">
             <span class="sunday">S</span>
-            <input type="checkbox" class="checkbox"/>
+            <input type="checkbox" class="checkbox" name="values" value="6" onchange="refreshDisabledStates(this)"/>
             <span class="fake"></span>
         </label>
-    </div>  -->
-    <button class="but">Submit</button>   
-</form>
+        <div class="error">Erorr, please input the correct value!</div>
+    </div> 
 
+    <div class="others"></div>
+    
+    <button id = "but" onclick="return false">Submit</button>  
+    <div id="result"></div>
+</form>
 
 <script src="index.js"></script>
 </body>
