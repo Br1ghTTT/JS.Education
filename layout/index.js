@@ -155,18 +155,15 @@ function onSubmit(){
             const arrAll = [];
             for(let i = 0; i < isCheked.length; i++){
                 arrAll.push(isCheked[i].checked? true : false);
-            }
-            
+            }            
             const isAllFalse = (element) =>  element == false;
-
 
                 for(let i = 0; i < error.length; i++){
                     if(rowData.hours[1] < rowData.hours[0] || rowData.hours[1] === rowData.hours[0] || rowData.hours[0] == '' || rowData.hours[1] == '' || arrAll.every(isAllFalse)){
                         error[i].style.display = 'block';
                         document.getElementById(`result`).style.display = 'none';
                     }else{
-                        error[i].style.display = 'none';
-    
+                        error[i].style.display = 'none';    
                         document.getElementById(`result`).innerHTML = `Work days of our restaurant is: ${rowData.days.map( dayNumb => map.get(dayNumb))}  
                         and work hours of these or this day(s) is from ${rowData.hours[0]} to ${rowData.hours[1]} `; 
                         document.getElementById(`result`).style.display = 'block';
